@@ -105,6 +105,7 @@ class Connection(object):
         try:
             self.connection = self.engine.connect()
         except Exception as e:
+            print(self._username)
             # These things should probably not be exported all over creation
             if self._password is None or self._username is None:
                 self._username, self._password = self.__get_user_credentials()
