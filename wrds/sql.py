@@ -67,7 +67,7 @@ class Connection(object):
         Loading library list...
         Done
         """
-        self._password = ""
+        self._password = kwargs.get('wrds_password', None)
         # If user passed in any of these parameters, override defaults.
         self._username = kwargs.get('wrds_username', None)
         self._hostname = kwargs.get('wrds_hostname', WRDS_POSTGRES_HOST)
