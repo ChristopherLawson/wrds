@@ -128,7 +128,7 @@ class Connection(object):
 
             # Connection successful. Offer to create a .pgpass for the user.
             print("WRDS recommends setting up a .pgpass file.")
-            do_create_pgpass = ""
+            do_create_pgpass = "n"
             while do_create_pgpass != "y" and do_create_pgpass != "n":
                 do_create_pgpass = input("Create .pgpass file now [y/n]?: ")
 
