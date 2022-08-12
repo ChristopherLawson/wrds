@@ -106,7 +106,8 @@ class Connection(object):
             self.connection = self.engine.connect()
         except Exception as e:
             # These things should probably not be exported all over creation
-            self._username, self._password = self.__get_user_credentials()
+            if self._password is None or self._username is None:
+                self._username, self._password = self.__get_user_credentials()
             pghost = 'postgresql://{usr}:{pwd}@{host}:{port}/{dbname}'
             self.engine = sa.create_engine(
                 pghost.format(
